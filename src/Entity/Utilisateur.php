@@ -20,12 +20,12 @@ class Utilisateur
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
+    private $Nom;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $Prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -35,38 +35,53 @@ class Utilisateur
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $telephone;
+    private $numeroTelephone;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Racechien;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $sexe;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $DateNaissance;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPrenom(): ?string
+    public function getNom(): ?string
     {
-        return $this->prenom;
+        return $this->Nom;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setNom(string $Nom): self
     {
-        $this->prenom = $prenom;
+        $this->Nom = $Nom;
 
         return $this;
     }
 
-    public function getNom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->nom;
+        return $this->Prenom;
     }
 
-    public function setNom(string $nom): self
+    public function setPrenom(string $Prenom): self
     {
-        $this->nom = $nom;
+        $this->Prenom = $Prenom;
 
         return $this;
     }
@@ -83,14 +98,14 @@ class Utilisateur
         return $this;
     }
 
-    public function getTelephone(): ?string
+    public function getNumeroTelephone(): ?string
     {
-        return $this->telephone;
+        return $this->numeroTelephone;
     }
 
-    public function setTelephone(string $telephone): self
+    public function setNumeroTelephone(string $numeroTelephone): self
     {
-        $this->telephone = $telephone;
+        $this->numeroTelephone = $numeroTelephone;
 
         return $this;
     }
@@ -103,6 +118,42 @@ class Utilisateur
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getRacechien(): ?string
+    {
+        return $this->Racechien;
+    }
+
+    public function setRacechien(string $Racechien): self
+    {
+        $this->Racechien = $Racechien;
+
+        return $this;
+    }
+
+    public function getSexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(string $sexe): self
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    public function getDateNaissance(): ?\DateTimeInterface
+    {
+        return $this->DateNaissance;
+    }
+
+    public function setDateNaissance(\DateTimeInterface $DateNaissance): self
+    {
+        $this->DateNaissance = $DateNaissance;
 
         return $this;
     }
